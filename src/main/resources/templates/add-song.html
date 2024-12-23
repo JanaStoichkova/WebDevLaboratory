@@ -1,0 +1,68 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">Music site</h1>
+        </div>
+    </section>
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <form action="/songs/add" method="POST">
+                    <div class="form-group">
+                        <label for="title">Song Title</label>
+                        <input type="text"
+                               class="form-control"
+                               id="title"
+                               name="title"
+                               th:value = "(${song.title}!=null ? ${song.getTitle()} : '')">
+                    </div>
+                    <div class="form-group">
+                        <label for="genre">Genre</label>
+                        <input type="text"
+                               class="form-control"
+                               id="genre"
+                               name="genre"
+                               th:value = "(${song.genre}!=null ? ${song.getGenre()} : '')">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="trackId">TrackID</label>
+                        <input type="text"
+                               class="form-control"
+                               id="trackId"
+                               name="trackId"
+                               th:value = "(${song.trackId}!=null ? ${song.getTrackId()} : '')">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="releaseYear">Release Year</label>
+                        <input type="text"
+                               class="form-control"
+                               id="releaseYear"
+                               name="releaseYear"
+                               th:value = "(${song.releaseYear}!=null ? ${song.getReleaseYear()} : '')">
+                    </div>
+
+                    <div class="form-group">
+                        <label >Album</label>
+                        <select name="album_id" id="album_id" class="form-control">
+                            <option
+                                    th:each="album : ${albumList}"
+                                    th:value="${album.getId()}"
+                                    th:text="${album.getName()}">
+                            </option>
+                        </select>
+                    </div>
+
+                    <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+                    <a type="button" class="btn btn-primary" href="/products">Back</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
