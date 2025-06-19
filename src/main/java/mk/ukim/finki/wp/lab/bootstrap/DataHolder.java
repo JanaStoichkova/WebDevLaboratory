@@ -66,9 +66,7 @@ public class DataHolder {
 
         users = new ArrayList<>();
         if (this.userRepository.count() == 0) {
-            users.add(new User("elena.atanasoska", "ea", "Elena", "Atanasoska"));
-            users.add(new User("darko.sasanski", "ds", "Darko", "Sasanski"));
-            users.add(new User("ana.todorovska", "at", "Ana", "Todorovska"));
+            users.add(new User("jana.stoichkova", "ea", "Jana", "Stoichkova"));
             this.userRepository.saveAll(users);
         }
 

@@ -61,7 +61,7 @@ public class WebSecurityConfig {
     @Bean
     public UserDetailsService userDetailsService() {
         UserDetails user1 = User.builder()
-                .username("petar.gogovski")
+                .username("jana.stoichkova")
                 .password(passwordEncoder.encode("ea"))
                 .roles("USER")
                 .build();
